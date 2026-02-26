@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from './supabaseClient'
+import { supabase } from './supabaseClient.js'
 
 import './App.css'
 
@@ -24,18 +24,16 @@ function App() {
 
 
   return (
-    <>
-      <div style={{padding: "2rem"}}>
-        <h1>Users</h1>
-        {users.map(user => (
-          <div key={user.id} style={{border: "1px solid #ccc", marginBottom: "1rem", pading: "0.5rem"}}>
-            <h2>{user.email}</h2>
-            <p>{user.password}</p>
+    <div style={{padding: "2rem"}}>
+      <h1>Users</h1>
 
-          </div>
-        ))}
-      </div>
-    </>
+      {users.map((user) => (
+        <div key={user.id} style={{border: "1px solid #ccc", marginBottom: "1rem", padding: "0.5rem"}}>
+          <h2>{user.email}</h2>
+          <p>{user.password}</p>
+        </div>
+      ))}
+    </div>
 
     
       // <div>
